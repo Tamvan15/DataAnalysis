@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-4 text-center text-gray-700">Upload your data and ask a question</h1>
+        <form method="post" enctype="multipart/form-data" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                <label for="file" class="block text-sm font-medium text-gray-700">Select Excel File <i>.xlxx</i></label>
+                <input type="file" name="file" id="file" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700">
+            </div>
+            <div>
+                <label for="question" class="block text-sm font-medium text-gray-700">Your Question</label>
+                <textarea name="question" id="question" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700"></textarea>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="btn btn-primary">Analyze</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

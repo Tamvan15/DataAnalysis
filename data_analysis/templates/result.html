@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-2xl font-bold mb-4 text-center text-gray-700">Analysis Result</h1>
+      <p class="mb-4 text-gray-700">{{ response }}</p>
+      <div class="flex justify-center">
+        <a href="{% url 'analyze_data' %}" class="btn btn-warning">Go back</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
